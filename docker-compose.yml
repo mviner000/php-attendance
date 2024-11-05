@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_USER: gjc_$admin12345
+      MYSQL_PASSWORD: redhorsestrong
+      MYSQL_ROOT_PASSWORD: 123456789  # Required for MySQL root user
+      MYSQL_DATABASE: gjc_attendance
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
